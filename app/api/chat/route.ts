@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      ...(webhookToken ? { 'X-RAG-Token': webhookToken } : {}),
+      ...(webhookToken ? { 'Authorization': webhookToken } : {}),
     },
     body: JSON.stringify({ question, session_id }),
   });
