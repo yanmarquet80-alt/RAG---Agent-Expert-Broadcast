@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+export const maxDuration = 120; // 2 minutes max pour laisser le temps à l'agent LLM
+
 export async function POST(req: NextRequest) {
   const body = await req.json();
   const { question, session_id } = body;
